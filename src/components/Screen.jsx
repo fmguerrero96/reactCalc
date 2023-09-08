@@ -1,5 +1,7 @@
 export default function Screen({ position }) {
-    <div className={position}>
-
-    </div>
+    return(
+        <div className={position}>
+            {position}
+        </div>
+    )
 }
