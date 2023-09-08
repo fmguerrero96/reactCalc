@@ -1,4 +1,4 @@
-export default function NumberButton( {number} ) {
+export default function NumberButton({ number }) {
     return(
         <button value={number}>
             {number}
