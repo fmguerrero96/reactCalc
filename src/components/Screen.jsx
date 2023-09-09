@@ -1,7 +1,7 @@
-export default function Screen({ position }) {
+export default function Screen({ position, displayValue }) {
     return(
         <div className={position}>
-            {position}
+            {displayValue}
         </div>
     )
 }
