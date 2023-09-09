@@ -1,21 +1,29 @@
 import NumberButton from "./components/NumberButton"
 import Screen from "./components/Screen"
+import { useState } from "react"
 
 export default function App() {
+  const [upperValue, setUpperValue] = useState('')
+
+  function onHnadleClick(event) {
+    const number = event.target.value
+    setUpperValue(upperValue + number)
+  }
+
   return (
     <div className="mainContainer">
-      <Screen position={'upper'}/>
+      <Screen displayValue={upperValue} position={'upper'}/>
       <Screen position={'lower'}/>
-      <NumberButton number={1}/>
-      <NumberButton number={2}/>
-      <NumberButton number={3}/>
-      <NumberButton number={4}/>
-      <NumberButton number={5}/>
-      <NumberButton number={6}/>
-      <NumberButton number={7}/>
-      <NumberButton number={8}/>
-      <NumberButton number={9}/>
-      <NumberButton number={0}/>
+      <NumberButton handleClick={onHnadleClick} number={1}/>
+      <NumberButton handleClick={onHnadleClick} number={2}/>
+      <NumberButton handleClick={onHnadleClick} number={3}/>
+      <NumberButton handleClick={onHnadleClick} number={4}/>
+      <NumberButton handleClick={onHnadleClick} number={5}/>
+      <NumberButton handleClick={onHnadleClick} number={6}/>
+      <NumberButton handleClick={onHnadleClick} number={7}/>
+      <NumberButton handleClick={onHnadleClick} number={8}/>
+      <NumberButton handleClick={onHnadleClick} number={9}/>
+      <NumberButton handleClick={onHnadleClick} number={0}/>
     </div>
   )
 }
