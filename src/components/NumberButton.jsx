@@ -1,6 +1,6 @@
-export default function NumberButton({ number }) {
+export default function NumberButton({ number, handleClick }) {
     return(
-        <button value={number}>
+        <button onClick={handleClick} value={number}>
             {number}
         </button>
     )
