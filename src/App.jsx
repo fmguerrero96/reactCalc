@@ -1,5 +1,6 @@
 import NumberButton from "./components/NumberButton"
 import Screen from "./components/Screen"
+import OperatorButton from "./components/OperatorButton"
 import { useState } from "react"
 
 export default function App() {
@@ -24,6 +25,10 @@ export default function App() {
       <NumberButton handleClick={onHnadleClick} number={8}/>
       <NumberButton handleClick={onHnadleClick} number={9}/>
       <NumberButton handleClick={onHnadleClick} number={0}/>
+      <OperatorButton operator={'+'}/>
+      <OperatorButton operator={'-'}/>
+      <OperatorButton operator={'*'}/>
+      <OperatorButton operator={'/'}/>
     </div>
   )
 }
