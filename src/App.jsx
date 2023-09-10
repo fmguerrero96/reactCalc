@@ -2,6 +2,7 @@ import NumberButton from "./components/NumberButton"
 import Screen from "./components/Screen"
 import OperatorButton from "./components/OperatorButton"
 import EqualsButton from "./components/EqualsButton"
+import Clear from "./components/Clear"
 import { useState } from "react"
 import '/Users/misaelguerrero/Desktop/odinRepos/calculator/src/styles.css'
 
@@ -52,6 +53,11 @@ export default function App() {
     setUpperValue('')
   }
 
+  function clear() {
+    setLowerValue('')
+    setUpperValue('')
+  }
+
   return (
     <div className="mainContainer">
       <Screen displayValue={upperValue} position={'upper'}/>
@@ -71,6 +77,7 @@ export default function App() {
       <OperatorButton handleClick={onHandleClick} operator={'*'}/>
       <OperatorButton handleClick={onHandleClick} operator={'/'}/>
       <EqualsButton calculate={solveEquation} expression={upperValue}/>
+      <Clear clear={clear} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
-export default function Clear() {
+export default function Clear({ clear }) {
     return(
-        <button>
+        <button onClick={clear}>
             Clear
         </button>
     )
