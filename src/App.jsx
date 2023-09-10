@@ -6,6 +6,7 @@ import { useState } from "react"
 
 export default function App() {
   const [upperValue, setUpperValue] = useState('')
+  const [lowerValue, setLowerValue] = useState('')
 
   function onHandleClick(event) {
     const operators = ['+', '-', '*', '/']
@@ -46,13 +47,14 @@ export default function App() {
       default:
         result = NaN; // Invalid operator
     }
-    console.log(result)
+    setLowerValue(result)
+    setUpperValue('')
   }
 
   return (
     <div className="mainContainer">
       <Screen displayValue={upperValue} position={'upper'}/>
-      <Screen position={'lower'}/>
+      <Screen displayValue={lowerValue} position={'lower'}/>
       <NumberButton handleClick={onHandleClick} number={1}/>
       <NumberButton handleClick={onHandleClick} number={2}/>
       <NumberButton handleClick={onHandleClick} number={3}/>
