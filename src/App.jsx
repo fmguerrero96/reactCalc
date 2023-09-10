@@ -18,7 +18,35 @@ export default function App() {
   }
 
   function solveEquation(expression) {
-    
+    const operators = ['+', '-', '*', '/']
+    const operatorRegex = /[+\-*/]/
+    const operatorIndex = expression.search(operatorRegex)
+    const operator = expression[operatorIndex]
+    let num1
+    let num2
+    let result = 0
+    if(operators.some(symbol => expression.includes(symbol))){
+      const operands = expression.split(operatorRegex)
+      num1 = parseFloat(operands[0])
+      num2 = parseFloat(operands[1])
+    }
+    switch (operator) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      case '*':
+        result = num1 * num2;
+        break;
+      case '/':
+        result = num1 / num2;
+        break;
+      default:
+        result = NaN; // Invalid operator
+    }
+    console.log(result)
   }
 
   return (
