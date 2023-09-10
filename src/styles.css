@@ -1,0 +1,10 @@
+.mainContainer{
+    width: 50%;
+    height: 50%;
+}
+
+.upper, .lower{
+    width: 20vw;
+    height: 10vh;
+    border: 1px solid black;
+}

@@ -3,6 +3,7 @@ import Screen from "./components/Screen"
 import OperatorButton from "./components/OperatorButton"
 import EqualsButton from "./components/EqualsButton"
 import { useState } from "react"
+import '/Users/misaelguerrero/Desktop/odinRepos/calculator/src/styles.css'
 
 export default function App() {
   const [upperValue, setUpperValue] = useState('')
