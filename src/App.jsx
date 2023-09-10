@@ -17,6 +17,10 @@ export default function App() {
     setUpperValue(upperValue + value)
   }
 
+  function solveEquation(expression) {
+    
+  }
+
   return (
     <div className="mainContainer">
       <Screen displayValue={upperValue} position={'upper'}/>
@@ -35,7 +39,7 @@ export default function App() {
       <OperatorButton handleClick={onHandleClick} operator={'-'}/>
       <OperatorButton handleClick={onHandleClick} operator={'*'}/>
       <OperatorButton handleClick={onHandleClick} operator={'/'}/>
-      <EqualsButton />
+      <EqualsButton calculate={solveEquation} expression={upperValue}/>
     </div>
   )
 }

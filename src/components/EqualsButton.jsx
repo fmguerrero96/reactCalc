@@ -1,6 +1,6 @@
-export default function EqualsButton() {
+export default function EqualsButton({ expression, calculate }) {
     return(
-        <button>
+        <button onClick={() => calculate(expression)}>
             =
         </button>
     )
