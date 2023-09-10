@@ -1,6 +1,6 @@
-export default function OperatorButton({ operator }) {
+export default function OperatorButton({ operator, handleClick }) {
     return(
-        <button className={operator}>
+        <button value={operator} onClick={handleClick} className={operator}>
             {operator}
         </button>
     )
