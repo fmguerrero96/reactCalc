@@ -1,6 +1,7 @@
 import NumberButton from "./components/NumberButton"
 import Screen from "./components/Screen"
 import OperatorButton from "./components/OperatorButton"
+import EqualsButton from "./components/EqualsButton"
 import { useState } from "react"
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
       <OperatorButton handleClick={onHandleClick} operator={'-'}/>
       <OperatorButton handleClick={onHandleClick} operator={'*'}/>
       <OperatorButton handleClick={onHandleClick} operator={'/'}/>
+      <EqualsButton />
     </div>
   )
 }
