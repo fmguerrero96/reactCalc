@@ -3,8 +3,16 @@ import Screen from "./components/Screen"
 import OperatorButton from "./components/OperatorButton"
 import EqualsButton from "./components/EqualsButton"
 import Clear from "./components/Clear"
-import { useState } from "react"
+import { useState, createContext } from "react"
 import '/Users/misaelguerrero/Desktop/odinRepos/calculator/src/styles.css'
+
+export const calcContext = createContext ({
+  upperValue: '',
+  lowerValue: '',
+  onHandleClick: () => {},
+  solveEquation: () => {},
+  clear: () => {},
+})
 
 export default function App() {
   const [upperValue, setUpperValue] = useState('')
