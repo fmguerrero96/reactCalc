@@ -6,7 +6,7 @@ import Clear from "./components/Clear"
 import { useState, createContext } from "react"
 import '/Users/misaelguerrero/Desktop/odinRepos/calculator/src/styles.css'
 
-export const calcContext = createContext ({
+export const CalcContext = createContext ({
   upperValue: '',
   lowerValue: '',
   onHandleClick: () => {},
@@ -67,25 +67,27 @@ export default function App() {
   }
 
   return (
-    <div className="mainContainer">
-      <Screen displayValue={upperValue} position={'upper'}/>
-      <Screen displayValue={lowerValue} position={'lower'}/>
-      <NumberButton handleClick={onHandleClick} number={1}/>
-      <NumberButton handleClick={onHandleClick} number={2}/>
-      <NumberButton handleClick={onHandleClick} number={3}/>
-      <NumberButton handleClick={onHandleClick} number={4}/>
-      <NumberButton handleClick={onHandleClick} number={5}/>
-      <NumberButton handleClick={onHandleClick} number={6}/>
-      <NumberButton handleClick={onHandleClick} number={7}/>
-      <NumberButton handleClick={onHandleClick} number={8}/>
-      <NumberButton handleClick={onHandleClick} number={9}/>
-      <NumberButton handleClick={onHandleClick} number={0}/>
-      <OperatorButton handleClick={onHandleClick} operator={'+'}/>
-      <OperatorButton handleClick={onHandleClick} operator={'-'}/>
-      <OperatorButton handleClick={onHandleClick} operator={'*'}/>
-      <OperatorButton handleClick={onHandleClick} operator={'/'}/>
-      <EqualsButton calculate={solveEquation} expression={upperValue}/>
-      <Clear clear={clear} />
+    <CalcContext.Provider>
+      <div className="mainContainer">
+      <Screen position={'upper'}/>
+      <Screen position={'lower'}/>
+      <NumberButton number={1}/>
+      <NumberButton number={2}/>
+      <NumberButton number={3}/>
+      <NumberButton number={4}/>
+      <NumberButton number={5}/>
+      <NumberButton number={6}/>
+      <NumberButton number={7}/>
+      <NumberButton number={8}/>
+      <NumberButton number={9}/>
+      <NumberButton number={0}/>
+      <OperatorButton operator={'+'}/>
+      <OperatorButton operator={'-'}/>
+      <OperatorButton operator={'*'}/>
+      <OperatorButton operator={'/'}/>
+      <EqualsButton />
+      <Clear />
     </div>
+    </CalcContext.Provider>
   )
 }
